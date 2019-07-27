@@ -1,0 +1,45 @@
+#!/bin/bash 
+
+# https://www.mankier.com/1/mocp
+
+state=$(mocp -Q '%state')
+raw_filename=$(mocp -Q '%file')
+
+filename=$raw_filename
+
+player_icon=""
+
+if [ "$state" == "STOP" ]; then
+    player_icon=" S "
+fi
+if [ "$state" == "PLAY" ]; then
+    player_icon=$(echo -e " \u22b3")
+fi
+if [ "$state" == "PAUSE" ]; then
+    player_icon=" || "
+fi
+
+
+media=$player_icon$(mocp -Q ' [%ct/%tt]')
+echo -e "$media"
+
+#PAUSE TRACK
+if [[ "${BLOCK_BUTTON}" -eq 1 ]];then
+	mocp -G
+
+## PREVIOUS TRACK
+elif [[ "${BLOCK_BUTTON}" -eq 2 ]];then 
+	mocp -r
+
+## NEXT TRACK
+elif [[ "${BLOCK_BUTTON}" -eq 3 ]];then
+	mocp -f
+
+#SEEK 5 SECONDS
+elif [[ "${BLOCK_BUTTON}" -eq 7 ]];then
+	mocp -k 5
+
+#SEEK -5 SECONDS
+elif [[ "${BLOCK_BUTTON}" -eq 6 ]];then
+	mocp -k -5
+fi

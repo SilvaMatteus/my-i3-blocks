@@ -52,15 +52,15 @@ bindsym $mod+Shift+space exec rofi -show run -theme $rofiTheme
 bindsym $mod+Ctrl+space exec rofi -show window -theme $rofiTheme
 
 # change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
 
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym Mod4+h focus left
+bindsym Mod4+j focus down
+bindsym Mod4+k focus up
+bindsym Mod4+l focus right
 
 # move windows in workspaces
 bindsym $mod+Shift+Left move left
@@ -303,7 +303,7 @@ exec --no-startup-id /usr/bin/regolith-ftue.sh
 exec --no-startup-id /usr/bin/unclutter -b
 
 # Change theme
-exec --no-startup-id /usr/bin/gsettings set org.gnome.desktop.interface gtk-theme "StarLabs-Dark"
+exec --no-startup-id /usr/bin/gsettings set org.gnome.desktop.interface gtk-theme "Night"
 
 # Change background
-exec --no-startup-id /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/n0one/Pictures/Wallpapers/solidcolor.png
+exec --no-startup-id /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/matteus/Pictures/solidcolor.png

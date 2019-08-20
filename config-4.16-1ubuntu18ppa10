@@ -304,6 +304,7 @@ exec --no-startup-id /usr/bin/unclutter -b
 
 # Change theme
 exec --no-startup-id /usr/bin/gsettings set org.gnome.desktop.interface gtk-theme "Night"
+exec --no-startup-id /usr/bin/gsettings set org.gnome.desktop.interface icon-theme 'StarLabs-Squircle'
 
 # Change background
 exec --no-startup-id /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/matteus/Pictures/solidcolor.png
